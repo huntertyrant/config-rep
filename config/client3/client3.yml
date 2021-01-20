@@ -1,5 +1,15 @@
 # 应用名称
 spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: accountChangeTopic
+          content-type: application/json
+        kafka:
+          binder:
+            zkNodes: localhost
+            brokers: localhost
   datasource:
     driver-class-name:
       com.mysql.cj.jdbc.Driver
