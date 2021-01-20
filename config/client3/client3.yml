@@ -1,9 +1,40 @@
+# 应用名称
 spring:
-  jpa:
-    database: MYSQL
+  application:
+    name:
+      client3
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8181
+      name: client3
+      profile: client3
   datasource:
-    platform: mysql
-    username: root
-    password: c,liphhey,r123
-    url: jdbc:mysql://localhost:3306/ordersys?serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name:
+      com.mysql.cj.jdbc.Driver
+    url:
+      jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+    username:
+      root
+    password:
+      c,liphhey,r123
+
+server:
+  port:
+    8083
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone:
+        http://localhost:8763/eureka/
+
+
+
