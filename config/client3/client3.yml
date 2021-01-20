@@ -1,17 +1,5 @@
 # 应用名称
 spring:
-  application:
-    name:
-      client3
-  profiles:
-    active:
-      default
-  cloud:
-    config:
-      enabled: true
-      uri: http://localhost:8181
-      name: client3
-      profile: client3
   datasource:
     driver-class-name:
       com.mysql.cj.jdbc.Driver
