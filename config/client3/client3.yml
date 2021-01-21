@@ -6,6 +6,7 @@ spring:
         output:
           destination: accountChangeTopic
           content-type: application/json
+          group: orderGroup
         kafka:
           binder:
             zkNodes: localhost
