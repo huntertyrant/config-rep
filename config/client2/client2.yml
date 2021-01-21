@@ -1,9 +1,32 @@
 spring:
-  jpa:
-    database: MYSQL
+  profiles:
+    active:
+      default
   datasource:
-    platform: mysql
     username: root
     password: c,liphhey,r123
     url: jdbc:mysql://localhost:3306/ordersys?serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    timeout: 10000
+
+mybatis:
+  type-aliases-package: com.hunt.client2.dao
+
+server:
+  port:
+    8082
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone:
+        http://localhost:8762/eureka/
+
+
+
